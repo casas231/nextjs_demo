@@ -1,25 +1,22 @@
 'use client';
 
-import {useState} from 'react';
-import {AlertDialog} from '@astryxdesign/core/AlertDialog';
+import {EmptyState} from '@astryxdesign/core/EmptyState';
+import {Button} from '@astryxdesign/core/Button';
+import {Icon} from '@astryxdesign/core/Icon';
+import {MagnifyingGlassIcon} from '@heroicons/react/24/outline';
 
-export default function AlertDialogAsyncAction() {
-  const [isLoading, setIsLoading] = useState(false);
-
+export default function Home() {
   return (
-    <AlertDialog
-      isOpen
-      isInline
-      onOpenChange={() => {}}
-      title="Revoke access?"
-      description="This user will immediately lose access to all shared resources."
-      actionLabel="Revoke"
-      isActionLoading={isLoading}
-      onAction={async () => {
-        setIsLoading(true);
-        await new Promise(r => setTimeout(r, 2000));
-        setIsLoading(false);
-      }}
+    <EmptyState
+      icon={<Icon icon={MagnifyingGlassIcon} size="lg" />}
+      title="Không có kết quả"
+      description="Thử thay đổi từ khóa hoặc xóa bộ lọc để xem kết quả."
+      actions={
+        <>
+          <Button label="Trở lại" variant="secondary" />
+          <Button label="Xóa bộ lọc" variant="primary" />
+        </>
+      }
     />
   );
 }

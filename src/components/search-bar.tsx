@@ -13,7 +13,7 @@ export default function SearchBar() {
 ​
     return (
         <div style={{width: '100%'}}>
-            <Stack direction="horizontal" gap={3} align="center">
+            <Stack direction="horizontal" gap={3}>
                 <TextInput
                     label=""
                     value={query}
@@ -21,6 +21,7 @@ export default function SearchBar() {
                     placeholder="Tìm kiếm…"
                     startIcon={MagnifyingGlassIcon}
                     hasClear
+                    isLabelHidden
                 />
                 <Button
                     label="Search"
